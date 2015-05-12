@@ -1,7 +1,7 @@
 #define BUILDING_NODE_EXTENSION
 #include <cstdint> // INT32_MAX
 #include <node.h>
-#include <sqlcli1.h>
+#include "/home/ec2-user/dsdriver/include/sqlcli1.h"
 
 #include "buffer-helper.hh"
 #include "connection.hh"
@@ -566,3 +566,4 @@ Handle<Value> Connection::Connect(const Arguments& args) {
 }
 
 /* vim:set sw=4 et: */
+

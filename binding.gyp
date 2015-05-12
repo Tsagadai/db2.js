@@ -7,11 +7,11 @@
         "-g",
         "-Wextra"
       ],
-      "include_dirs": ["/opt/ibm/db2/V9.7/include"],
+      "include_dirs": ["/home/ec2-user/dsdriver/include"],
       "link_settings": {
         "libraries": [
-          "-L/opt/ibm/db2/V9.7/lib64",
-          "-ldb2"
+          "-L/home/ec2-user/dsdriver/include/lib64",
+         
         ],
       },
       "target_name": "db2",
@@ -19,3 +19,4 @@
     }
   ]
 }
+

@@ -3,7 +3,7 @@
 #define MYOBJECT_HH
 
 #include <node.h>
-#include <sqlcli.h>
+#include "/home/ec2-user/dsdriver/include/sqlcli.h"
 
 class Connection : public node::ObjectWrap {
     public:
@@ -25,3 +25,4 @@ class Connection : public node::ObjectWrap {
 };
 
 #endif
+
