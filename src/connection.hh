@@ -4,6 +4,7 @@
 
 #include <node.h>
 #include "/home/ec2-user/dsdriver/include/sqlcli.h"
+#include "/home/ec2-user/dsdriver/include/sqlcli1.h"
 
 class Connection : public node::ObjectWrap {
     public:
@@ -11,8 +12,8 @@ class Connection : public node::ObjectWrap {
         static v8::Handle<v8::Value> Connect(const v8::Arguments& args);
 
     private:
-        Connection(char const* server, 
-                       char const* user, 
+        Connection(char const* server,
+                       char const* user,
                        char const* password);
         ~Connection();
 

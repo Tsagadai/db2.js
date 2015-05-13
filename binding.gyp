@@ -10,8 +10,9 @@
       "include_dirs": ["/home/ec2-user/dsdriver/include"],
       "link_settings": {
         "libraries": [
-          "-L/home/ec2-user/dsdriver/include/lib64",
-         
+          "-L/home/ec2-user/dsdriver/include",
+          "-L/home/ec2-user/dsdriver/lib",
+
         ],
       },
       "target_name": "db2",

@@ -1,6 +1,7 @@
 #define BUILDING_NODE_EXTENSION
 #include <cstdint> // INT32_MAX
 #include <node.h>
+#include "/home/ec2-user/dsdriver/include/sqlcli.h"
 #include "/home/ec2-user/dsdriver/include/sqlcli1.h"
 
 #include "buffer-helper.hh"
@@ -121,8 +122,8 @@ static char const* getSqlState (SQLSMALLINT  handleType,
     return (char const*)state;
 }
 
-Connection::Connection(char const* server, 
-                       char const* user = NULL, 
+Connection::Connection(char const* server,
+                       char const* user = NULL,
                        char const* password = NULL) {
     SQLRETURN  statusCode;
 
@@ -307,7 +308,7 @@ Handle<Value> Connection::Execute (const Arguments& args) {
                 return scope.Close(Undefined());
             }
         }
-        
+
         /* here we can only have SQL_NO_DATA || SQL_SUCCEEDED() */
         while (SQL_SUCCEEDED(statusCode)) {
             if (!args[indexCallback]->IsFunction()) {
@@ -536,7 +537,7 @@ Handle<Value> Connection::New(const Arguments& args) {
     }
 
     String::Utf8Value server(args[0]->ToString());
-    
+
     Local<String> tUser;
     Local<String> tPassword;
     if (args.Length() == 3) {
@@ -545,7 +546,7 @@ Handle<Value> Connection::New(const Arguments& args) {
     }
     String::Utf8Value user(tUser);
     String::Utf8Value password(tPassword);
-    
+
     Connection* obj = new Connection(*server, *user, *password);
     obj->Wrap(args.This());
 
